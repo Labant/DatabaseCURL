@@ -1,0 +1,32 @@
+#pragma once
+#include <QGridLayout>
+#include <QPushbutton>
+#include <QLabel>
+#include <QTextEdit>
+#include <QTextLine>
+#include <QLineEdit>
+#include <QPushButton>
+#include <QCheckBox>
+#include <QMenu>
+#include <QAction>
+#include <QGridLayout>
+#include <QGroupBox>
+#include <QComboBox>
+#include <QTableView>
+#include <QFileDialog>
+#include <QToolBar>
+#include <QHeaderView>
+#include "controler.h"
+#include "state_machine.h"
+#include "tool_bar_imp_front_page.h"
+#include "tool_bar_imp_operator.h"
+#include "operator_aera.h"
+#include "center_widget.h"
+#include "table_view_content.h"
+#include "table_content_and_operator_widget.h"
+#include "operator_area_serach_imp.h"
+#include "operator_area_insert_imp.h"
+#include "operator_area_delete_imp.h"
+#include "operator_area_compare_imp.h"
+
+

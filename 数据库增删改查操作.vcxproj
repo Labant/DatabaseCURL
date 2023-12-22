@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+***************************************************************************************************
+ Copyright (C) 2023 The Qt Company Ltd.
+ SPDX-License-Identifier: LicenseRef-Qt-Commercial OR LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only
+***************************************************************************************************
+-->
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{DB1B17E5-CFA8-4E9A-8219-A64D6B348926}</ProjectGuid>
+    <Keyword>QtVS_v304</Keyword>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">10.0.22621.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">10.0.22621.0</WindowsTargetPlatformVersion>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')">
+    <Import Project="$(QtMsBuild)\qt_defaults.props" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
+    <QtInstall>5.15.2_msvc2019_64</QtInstall>
+    <QtModules>core;sql;gui;widgets</QtModules>
+    <QtBuildConfig>debug</QtBuildConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
+    <QtInstall>5.15.2_msvc2019_64</QtInstall>
+    <QtModules>core;sql;gui;widgets</QtModules>
+    <QtBuildConfig>release</QtBuildConfig>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <IncludePath>$(SolutionDir)mode\centerwidget\operatorarea;$(SolutionDir)view\centerwidget\operatorarea;$(SolutionDir)mode\centerwidget\tableview;$(SolutionDir)view\centerwidget\tableview;$(SolutionDir)mode\centerwidget;$(SolutionDir)view\centerwidget;$(SolutionDir)mode\toolbar;$(SolutionDir)view\toolbar;$(SolutionDir)mode\menubar;$(SolutionDir)view\menubar;$(SolutionDir);$(SolutionDir)general;$(SolutionDir)control;$(SolutionDir)view;$(SolutionDir)mode;$(SolutionDir)common;$(IncludePath)</IncludePath>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <IncludePath>$(SolutionDir)mode\centerwidget\operatorarea;$(SolutionDir)view\centerwidget\operatorarea;$(SolutionDir)mode\centerwidget\tableview;$(SolutionDir)view\centerwidget\tableview;$(SolutionDir)mode\centerwidget;$(SolutionDir)view\centerwidget;$(SolutionDir)mode\toolbar;$(SolutionDir)view\toolbar;$(SolutionDir)mode\menubar;$(SolutionDir)view\menubar;$(SolutionDir);$(SolutionDir)general;$(SolutionDir)view;$(SolutionDir)mode;$(SolutionDir)control;$(SolutionDir)common;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>-make j8 %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>-make -j4 %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <Optimization>MaxSpeed</Optimization>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <QtRcc Include="v_controler.qrc" />
+    <QtMoc Include="v_controler.h" />
+    <ClCompile Include="mode\toolbar\operator_area_serach_imp_mode.cpp" />
+    <ClCompile Include="view\centerwidget\operatorarea\operator_area_insert_imp.cpp" />
+    <ClCompile Include="view\centerwidget\operatorarea\operator_area_serach_imp.cpp" />
+    <ClCompile Include="view\centerwidget\table_content_and_operator_widget.cpp" />
+    <ClCompile Include="view\centerwidget\tableview\table_view_content.cpp" />
+    <ClCompile Include="view\centerwidget\center_widget.cpp" />
+    <ClCompile Include="common\common.cpp" />
+    <ClCompile Include="common\structs.hpp" />
+    <ClCompile Include="control\controler.cpp" />
+    <ClCompile Include="common\qt_layout_base.cpp" />
+    <ClCompile Include="common\qt_mode_base.cpp" />
+    <ClCompile Include="common\qt_mode_include.cpp" />
+    <ClCompile Include="common\state_machine.cpp" />
+    <ClCompile Include="view\centerwidget\operatorarea\operator_aera.cpp" />
+    <ClCompile Include="view\centerwidget\operatorarea\operator_area_delete_imp.cpp" />
+    <ClCompile Include="view\centerwidget\operatorarea\operator_area_compare_imp.cpp" />
+    <ClCompile Include="view\toolbar\tool_bar_imp_front_page.cpp" />
+    <ClCompile Include="view\toolbar\tool_bar_imp_operator.cpp" />
+    <ClCompile Include="view\menubar\menu_bar.cpp" />
+    <ClCompile Include="mode\menubar\menu_bar_mode.cpp" />
+    <ClCompile Include="general\db_connect.cpp" />
+    <ClCompile Include="v_controler.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="mode\toolbar\operator_area_serach_imp_mode.h" />
+    <QtMoc Include="view\centerwidget\operatorarea\operator_area_compare_imp.h" />
+    <QtMoc Include="view\centerwidget\operatorarea\operator_area_delete_imp.h" />
+    <QtMoc Include="view\centerwidget\operatorarea\operator_area_insert_imp.h" />
+    <QtMoc Include="view\centerwidget\operatorarea\operator_area_serach_imp.h" />
+    <QtMoc Include="view\centerwidget\tableview\table_view_content.h" />
+    <QtMoc Include="view\centerwidget\center_widget.h" />
+    <QtMoc Include="view\centerwidget\table_content_and_operator_widget.h" />
+    <ClInclude Include="common\common.h" />
+    <ClInclude Include="common\qt_layout_include.h" />
+    <QtMoc Include="view\centerwidget\operatorarea\operator_aera.h" />
+    <QtMoc Include="view\toolbar\tool_bar_imp_front_page.h" />
+    <QtMoc Include="view\toolbar\tool_bar_imp_operator.h" />
+    <QtMoc Include="control\controler.h" />
+    <ClInclude Include="common\qt_layout_base.h" />
+    <ClInclude Include="common\qt_mode_base.h" />
+    <ClInclude Include="common\qt_mode_include.h" />
+    <ClInclude Include="common\state_machine.h" />
+    <QtMoc Include="view\menubar\menu_bar.h" />
+    <QtMoc Include="mode\menubar\menu_bar_mode.h" />
+    <QtMoc Include="general\db_connect.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="db\pa_ann_sqlit3_jlct3.db" />
+    <None Include="main.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="db\使用序列.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
