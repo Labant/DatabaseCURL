@@ -13,6 +13,26 @@ extern string db_select;
 
 #define COMMON Common::GetInstance()
 
+typedef struct EnteryMapStruce
+{
+	int category;  //text¡¢audio
+	int index_key_id;      //connect keyId
+	int index_tem_table_key_id;      //temp table keyId
+	QString IdString;
+	QString ShortNameString;
+	int count = 0;
+	QString target_str_id_string = "";
+	QString target_str_short_name_string = "";
+}EnteryStruceData;
+
+typedef struct ContentMapStruce
+{
+	int keyId;
+	QString ShortName;
+	QString color = "FF0000";
+	QString caption = QString::fromLocal8Bit("ÎÞ");
+}ContentStruceData;
+
 class Common
 {
 private:

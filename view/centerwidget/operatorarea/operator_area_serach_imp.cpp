@@ -27,6 +27,7 @@ void Operator_Area_Serach_Imp::InitMembers()
 void Operator_Area_Serach_Imp::InitLayout()
 {
 	this->setTitle(QStringLiteral("²éÑ¯²Ù×÷Çø"));
+	combo_box_operator_area_serach_imp_->setFixedHeight(30);
 	//combo_box_operator_area_serach_imp_->setMinimumHeight(combo_box_operator_area_serach_imp_->height() * 1.3f);
 	//qDebug() <<"height:" << combo_box_operator_area_serach_imp_->height();
 	this->grid_layout_operator_area_ptr->addWidget(combo_box_operator_area_serach_imp_, 0, 0, 1, 1);

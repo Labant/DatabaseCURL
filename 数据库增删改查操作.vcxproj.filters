@@ -79,7 +79,7 @@
     <ClCompile Include="view\centerwidget\center_widget.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="view\centerwidget\table_content_and_operator_widget.cpp">
+    <ClCompile Include="view\centerwidget\tableview\table_content_and_operator_widget.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="view\centerwidget\tableview\table_view_content.cpp">
@@ -100,6 +100,27 @@
     <ClCompile Include="mode\toolbar\operator_area_serach_imp_mode.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="view\centerwidget\tableview\table_view_content_insert.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="view\centerwidget\tableview\addorrm\label_control_addi.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="view\centerwidget\tableview\addorrm\label_control_remove.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="view\centerwidget\tableview\addorrm\operator_icon_domain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="view\centerwidget\tableview\table_view_contents.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="general\character_do_with.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="general\edit_query_model.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common\qt_layout_include.h">
@@ -118,6 +139,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="common\state_machine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="general\character_do_with.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -146,7 +170,7 @@
     <QtMoc Include="view\centerwidget\center_widget.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="view\centerwidget\table_content_and_operator_widget.h">
+    <QtMoc Include="view\centerwidget\tableview\table_content_and_operator_widget.h">
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="view\centerwidget\tableview\table_view_content.h">
@@ -165,6 +189,24 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="mode\toolbar\operator_area_serach_imp_mode.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="view\centerwidget\tableview\table_view_content_insert.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="view\centerwidget\tableview\addorrm\label_control_addi.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="view\centerwidget\tableview\addorrm\label_control_remove.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="view\centerwidget\tableview\addorrm\operator_icon_domain.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="view\centerwidget\tableview\table_view_contents.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="general\edit_query_model.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

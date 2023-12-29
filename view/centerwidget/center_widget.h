@@ -4,6 +4,7 @@
 #include "qt_layout_base.h"
 
 class Table_Content_And_Operator_Widget;
+class Table_View_Content_Insert;
 
 class Center_Widget :
     public QStackedWidget,public Qt_Layout_Base
@@ -16,7 +17,7 @@ protected:
 	virtual void InitMembers();
 	virtual void InitLayout();
 
-    //4 widget in center widget,eg,关闭数据库/打开数据库、 查询、插入、删除、对比（未实现）
+    //4 widgets in center widget,eg,关闭数据库/打开数据库、 查询、插入、删除、对比（未实现）
     Table_Content_And_Operator_Widget* open_or_close_center_widget_ptr_ = nullptr;
     Table_Content_And_Operator_Widget* serach_center_widget_ptr_ = nullptr;
     Table_Content_And_Operator_Widget* insert_center_widget_ptr_ = nullptr;

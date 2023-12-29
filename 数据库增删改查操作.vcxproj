@@ -62,19 +62,17 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <IncludePath>$(SolutionDir)mode\centerwidget\operatorarea;$(SolutionDir)view\centerwidget\operatorarea;$(SolutionDir)mode\centerwidget\tableview;$(SolutionDir)view\centerwidget\tableview;$(SolutionDir)mode\centerwidget;$(SolutionDir)view\centerwidget;$(SolutionDir)mode\toolbar;$(SolutionDir)view\toolbar;$(SolutionDir)mode\menubar;$(SolutionDir)view\menubar;$(SolutionDir);$(SolutionDir)general;$(SolutionDir)control;$(SolutionDir)view;$(SolutionDir)mode;$(SolutionDir)common;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)view\centerwidget\tableview\addorrm;$(SolutionDir)mode\centerwidget\operatorarea;$(SolutionDir)view\centerwidget\operatorarea;$(SolutionDir)mode\centerwidget\tableview;$(SolutionDir)view\centerwidget\tableview;$(SolutionDir)mode\centerwidget;$(SolutionDir)view\centerwidget;$(SolutionDir)mode\toolbar;$(SolutionDir)view\toolbar;$(SolutionDir)mode\menubar;$(SolutionDir)view\menubar;$(SolutionDir);$(SolutionDir)general;$(SolutionDir)control;$(SolutionDir)view;$(SolutionDir)mode;$(SolutionDir)common;$(IncludePath)</IncludePath>
     <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
-    <IncludePath>$(SolutionDir)mode\centerwidget\operatorarea;$(SolutionDir)view\centerwidget\operatorarea;$(SolutionDir)mode\centerwidget\tableview;$(SolutionDir)view\centerwidget\tableview;$(SolutionDir)mode\centerwidget;$(SolutionDir)view\centerwidget;$(SolutionDir)mode\toolbar;$(SolutionDir)view\toolbar;$(SolutionDir)mode\menubar;$(SolutionDir)view\menubar;$(SolutionDir);$(SolutionDir)general;$(SolutionDir)view;$(SolutionDir)mode;$(SolutionDir)control;$(SolutionDir)common;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)view\centerwidget\tableview\addorrm;$(SolutionDir)mode\centerwidget\operatorarea;$(SolutionDir)view\centerwidget\operatorarea;$(SolutionDir)mode\centerwidget\tableview;$(SolutionDir)view\centerwidget\tableview;$(SolutionDir)mode\centerwidget;$(SolutionDir)view\centerwidget;$(SolutionDir)mode\toolbar;$(SolutionDir)view\toolbar;$(SolutionDir)mode\menubar;$(SolutionDir)view\menubar;$(SolutionDir);$(SolutionDir)general;$(SolutionDir)view;$(SolutionDir)mode;$(SolutionDir)control;$(SolutionDir)common;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
-    <Link>
-      <AdditionalOptions>-make j8 %(AdditionalOptions)</AdditionalOptions>
-    </Link>
+    <Link />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -85,9 +83,7 @@
     <ClCompile>
       <LanguageStandard_C>stdc11</LanguageStandard_C>
     </ClCompile>
-    <Link>
-      <AdditionalOptions>-make -j4 %(AdditionalOptions)</AdditionalOptions>
-    </Link>
+    <Link />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
     <ClCompile>
@@ -116,10 +112,17 @@
   <ItemGroup>
     <QtRcc Include="v_controler.qrc" />
     <QtMoc Include="v_controler.h" />
+    <ClCompile Include="general\character_do_with.cpp" />
+    <ClCompile Include="general\edit_query_model.cpp" />
+    <ClCompile Include="view\centerwidget\tableview\table_view_contents.cpp" />
+    <ClCompile Include="view\centerwidget\tableview\addorrm\operator_icon_domain.cpp" />
+    <ClCompile Include="view\centerwidget\tableview\addorrm\label_control_addi.cpp" />
+    <ClCompile Include="view\centerwidget\tableview\addorrm\label_control_remove.cpp" />
     <ClCompile Include="mode\toolbar\operator_area_serach_imp_mode.cpp" />
+    <ClCompile Include="view\centerwidget\tableview\table_view_content_insert.cpp" />
     <ClCompile Include="view\centerwidget\operatorarea\operator_area_insert_imp.cpp" />
     <ClCompile Include="view\centerwidget\operatorarea\operator_area_serach_imp.cpp" />
-    <ClCompile Include="view\centerwidget\table_content_and_operator_widget.cpp" />
+    <ClCompile Include="view\centerwidget\tableview\table_content_and_operator_widget.cpp" />
     <ClCompile Include="view\centerwidget\tableview\table_view_content.cpp" />
     <ClCompile Include="view\centerwidget\center_widget.cpp" />
     <ClCompile Include="common\common.cpp" />
@@ -141,6 +144,12 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="general\edit_query_model.h" />
+    <QtMoc Include="view\centerwidget\tableview\table_view_contents.h" />
+    <QtMoc Include="view\centerwidget\tableview\addorrm\operator_icon_domain.h" />
+    <QtMoc Include="view\centerwidget\tableview\addorrm\label_control_remove.h" />
+    <QtMoc Include="view\centerwidget\tableview\addorrm\label_control_addi.h" />
+    <QtMoc Include="view\centerwidget\tableview\table_view_content_insert.h" />
     <QtMoc Include="mode\toolbar\operator_area_serach_imp_mode.h" />
     <QtMoc Include="view\centerwidget\operatorarea\operator_area_compare_imp.h" />
     <QtMoc Include="view\centerwidget\operatorarea\operator_area_delete_imp.h" />
@@ -148,7 +157,8 @@
     <QtMoc Include="view\centerwidget\operatorarea\operator_area_serach_imp.h" />
     <QtMoc Include="view\centerwidget\tableview\table_view_content.h" />
     <QtMoc Include="view\centerwidget\center_widget.h" />
-    <QtMoc Include="view\centerwidget\table_content_and_operator_widget.h" />
+    <QtMoc Include="view\centerwidget\tableview\table_content_and_operator_widget.h" />
+    <ClInclude Include="general\character_do_with.h" />
     <ClInclude Include="common\common.h" />
     <ClInclude Include="common\qt_layout_include.h" />
     <QtMoc Include="view\centerwidget\operatorarea\operator_aera.h" />

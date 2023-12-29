@@ -59,6 +59,15 @@ public:
 		DeleteCategory = CenterWidgetIndexState::DeleteWindow,
 		CompareCategory = CenterWidgetIndexState::CompareWindow
 	};
+
+	//Table view category
+	enum TableViewCategory
+	{
+		AudioCategory = 0,
+		TextCategory,
+	};
+	std::atomic<TableViewCategory> table_category_state_info_of_insert_window = TableViewCategory::AudioCategory;
+
 public:
 class Destory
 	{

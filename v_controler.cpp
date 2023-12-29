@@ -53,6 +53,11 @@ void V_Controler::OnSetCurrentWindow(State_Machine::CenterWidgetIndexState state
 
 }
 
+void V_Controler::OnShowInfos(QString show_info_)
+{
+	QMessageBox::information(this, QStringLiteral("¾¯¸æ"), QStringLiteral("show_info_"));
+}
+
 
 void V_Controler::InitMembers()
 {
