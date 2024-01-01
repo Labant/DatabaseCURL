@@ -12,4 +12,8 @@ QMenu {
     background-color: red;
     border: 4px solid black;
 }
+#operator_icon_domain_ptr_ {
+    /*background-color: red;*/
+    border:none;/*…Ë÷√Œﬁ±ﬂøÚ*/
+}
 

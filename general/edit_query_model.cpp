@@ -18,6 +18,12 @@ QVariant Edit_Query_Model::data(const QModelIndex& index, int role) const
 	return variant_list_.at(index.row()).toString();
 	//qDebug() << index.row() << ","<< index.column();
 
+	//static int i = 0;
+	//QString xx = i > 0 ? QString::number(index.row() + (1)) : QString::number(index.row());
+	//if (i > 0)i = 0;
+	//if (i <  1)i = 1;
+	//return xx;
+
 }
 
 bool Edit_Query_Model::setData(const QModelIndex& index, const QVariant& value, int role)
@@ -49,10 +55,8 @@ void Edit_Query_Model::SetConfig(const QSqlQuery& query, QString str_)
 	map_.clear();
 	for (; query_.next();)
 	{
-		//qDebug() << query_.value(cow_name_);
-		map_.emplace(query_.value(cow_name_).toString(), 
+		map_.emplace(query_.value(cow_name_).toString(),
 			query_.value("keyId").toInt());
-		//variant_list_.append(query_.value("keyId"));
 		variant_list_.append(query_.value(cow_name_));
 	}
 }

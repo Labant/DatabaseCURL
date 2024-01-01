@@ -55,7 +55,13 @@ void V_Controler::OnSetCurrentWindow(State_Machine::CenterWidgetIndexState state
 
 void V_Controler::OnShowInfos(QString show_info_)
 {
-	QMessageBox::information(this, QStringLiteral("警告"), QStringLiteral("show_info_"));
+	QMessageBox::information(this, QStringLiteral("警告"), show_info_);
+}
+
+void V_Controler::OnShowStatusBarInfo(QString info)
+{
+	status_bar_ptr_->showMessage(info, 1300);
+
 }
 
 
@@ -74,18 +80,23 @@ void V_Controler::InitMembers()
 	tool_bar_operator_ptr_ = new Tool_Bar_Imp_Operator();
 	COMMON->InsertQObjectPtr("tool_bar_operator_ptr_", tool_bar_operator_ptr_);
 
+	//status bar
+	status_bar_ptr_ = new Status_Bar;
+	COMMON->InsertQObjectPtr("status_bar_ptr_", status_bar_ptr_);
 }
 
 void V_Controler::InitLayout()
 {
 	setMinimumSize(1200, 600);
-
+	setWindowTitle(QStringLiteral("MIT-自研小工具V1.00(开发中 2023.12.29)"));
 	this->setMenuBar(menu_bar_ptr_);
 	this->addToolBar(Qt::TopToolBarArea, tool_bar_front_page_ptr_);
 
 	this->setCentralWidget(center_widget_ptr);
 	center_widget_ptr->hide();
 	center_widget_ptr->setCurrentIndex(STATE->center_widows_index_state_info);
+
+	this->setStatusBar(status_bar_ptr_);
 
 
 	QFile a;

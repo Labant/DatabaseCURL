@@ -25,6 +25,7 @@ public:
 	void OnChangeToolBar2Operator();
 	void OnSetCurrentWindow(State_Machine::CenterWidgetIndexState = State_Machine::OpenAndCloseWindow);
 	void OnShowInfos(QString);
+	void OnShowStatusBarInfo(QString);
 protected:
 	virtual void InitMembers();
 	virtual void InitLayout();
@@ -40,6 +41,9 @@ private:
 
 	//center window
 	Center_Widget* center_widget_ptr = nullptr;
+
+	//status bar
+	Status_Bar* status_bar_ptr_ = nullptr;
 
 
 };

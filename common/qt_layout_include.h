@@ -28,5 +28,6 @@
 #include "operator_area_insert_imp.h"
 #include "operator_area_delete_imp.h"
 #include "operator_area_compare_imp.h"
+#include "status_bar.h"
 
 

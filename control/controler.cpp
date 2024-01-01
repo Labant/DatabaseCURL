@@ -110,9 +110,8 @@ void Controler::InitConnects()
 			qobject_cast<V_Controler*>(COMMON->Get("w"))->OnSetCurrentWindow();
 		});
 
-
-
-
-
+	//status bar info of tip show
+	connect(qobject_cast<Db_Connect*>(COMMON->Get("db_connect_ptr_")), &Db_Connect::ShowStatusBarInfo,
+		qobject_cast<V_Controler*>(COMMON->Get("w")), &V_Controler::OnShowStatusBarInfo);
 
 }

@@ -62,11 +62,12 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <IncludePath>$(SolutionDir)view\centerwidget\tableview\addorrm;$(SolutionDir)mode\centerwidget\operatorarea;$(SolutionDir)view\centerwidget\operatorarea;$(SolutionDir)mode\centerwidget\tableview;$(SolutionDir)view\centerwidget\tableview;$(SolutionDir)mode\centerwidget;$(SolutionDir)view\centerwidget;$(SolutionDir)mode\toolbar;$(SolutionDir)view\toolbar;$(SolutionDir)mode\menubar;$(SolutionDir)view\menubar;$(SolutionDir);$(SolutionDir)general;$(SolutionDir)control;$(SolutionDir)view;$(SolutionDir)mode;$(SolutionDir)common;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)mode\statusbar;$(SolutionDir)view\statusbar;$(SolutionDir)view\centerwidget\tableview\addorrm;$(SolutionDir)mode\centerwidget\operatorarea;$(SolutionDir)view\centerwidget\operatorarea;$(SolutionDir)mode\centerwidget\tableview;$(SolutionDir)view\centerwidget\tableview;$(SolutionDir)mode\centerwidget;$(SolutionDir)view\centerwidget;$(SolutionDir)mode\toolbar;$(SolutionDir)view\toolbar;$(SolutionDir)mode\menubar;$(SolutionDir)view\menubar;$(SolutionDir);$(SolutionDir)general;$(SolutionDir)control;$(SolutionDir)view;$(SolutionDir)mode;$(SolutionDir)common;$(IncludePath)</IncludePath>
     <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
-    <IncludePath>$(SolutionDir)view\centerwidget\tableview\addorrm;$(SolutionDir)mode\centerwidget\operatorarea;$(SolutionDir)view\centerwidget\operatorarea;$(SolutionDir)mode\centerwidget\tableview;$(SolutionDir)view\centerwidget\tableview;$(SolutionDir)mode\centerwidget;$(SolutionDir)view\centerwidget;$(SolutionDir)mode\toolbar;$(SolutionDir)view\toolbar;$(SolutionDir)mode\menubar;$(SolutionDir)view\menubar;$(SolutionDir);$(SolutionDir)general;$(SolutionDir)view;$(SolutionDir)mode;$(SolutionDir)control;$(SolutionDir)common;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)view\statusbar;$(SolutionDir)mode\statusbar;$(SolutionDir)view\centerwidget\tableview\addorrm;$(SolutionDir)mode\centerwidget\operatorarea;$(SolutionDir)view\centerwidget\operatorarea;$(SolutionDir)mode\centerwidget\tableview;$(SolutionDir)view\centerwidget\tableview;$(SolutionDir)mode\centerwidget;$(SolutionDir)view\centerwidget;$(SolutionDir)mode\toolbar;$(SolutionDir)view\toolbar;$(SolutionDir)mode\menubar;$(SolutionDir)view\menubar;$(SolutionDir);$(SolutionDir)general;$(SolutionDir)view;$(SolutionDir)mode;$(SolutionDir)control;$(SolutionDir)common;$(IncludePath)</IncludePath>
+    <TargetName>MIT-自研数据库工具</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -114,6 +115,8 @@
     <QtMoc Include="v_controler.h" />
     <ClCompile Include="general\character_do_with.cpp" />
     <ClCompile Include="general\edit_query_model.cpp" />
+    <ClCompile Include="view\statusbar\status_bar.cpp" />
+    <ClCompile Include="tip_infos.cpp" />
     <ClCompile Include="view\centerwidget\tableview\table_view_contents.cpp" />
     <ClCompile Include="view\centerwidget\tableview\addorrm\operator_icon_domain.cpp" />
     <ClCompile Include="view\centerwidget\tableview\addorrm\label_control_addi.cpp" />
@@ -144,6 +147,8 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="view\statusbar\status_bar.h" />
+    <QtMoc Include="tip_infos.h" />
     <QtMoc Include="general\edit_query_model.h" />
     <QtMoc Include="view\centerwidget\tableview\table_view_contents.h" />
     <QtMoc Include="view\centerwidget\tableview\addorrm\operator_icon_domain.h" />

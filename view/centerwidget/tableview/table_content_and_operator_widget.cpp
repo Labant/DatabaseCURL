@@ -64,6 +64,7 @@ void Table_Content_And_Operator_Widget::SetTableMode(QSqlQueryModel* model)
 void Table_Content_And_Operator_Widget::SetTableModeEntery(QSqlQueryModel* model)
 {
 	table_view_enteny_ptr_->setModel(model);
+	table_view_enteny_ptr_->hideColumn(0);  //Òþ²ØkeyIdÐÅÏ¢
 	////set show
 	//table_view_enteny_ptr_->setColumnHidden(0, true);
 	//table_view_enteny_ptr_->setColumnHidden(1, true);

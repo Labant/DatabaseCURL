@@ -121,6 +121,12 @@
     <ClCompile Include="general\edit_query_model.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="tip_infos.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="view\statusbar\status_bar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common\qt_layout_include.h">
@@ -207,6 +213,12 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="general\edit_query_model.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="tip_infos.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="view\statusbar\status_bar.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

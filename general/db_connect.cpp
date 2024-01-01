@@ -181,7 +181,10 @@ void Db_Connect::OnCurrentTextChangedOfComboxOfInsert(QString table_name__)
 
 	//QSqlQuery sql_query(*sql_database_ptr_);
 	QSqlQuery sql_query(sql_database_);
-	sql_query.prepare(QString("SELECT keyId,ShortNameString FROM %1").arg(table_name__));
+	//sql_query.prepare(QString("SELECT keyId as %1,ShortNameString as %2 FROM %3")
+	//	.arg(QStringLiteral("区间ID")).arg(QStringLiteral("区间信息")).arg(table_name__));
+	sql_query.prepare(QString("SELECT keyId,ShortNameString as %2 FROM %3")
+		.arg(QStringLiteral("区间信息")).arg(table_name__));
 	sql_query.exec();
 
 	
@@ -192,16 +195,17 @@ void Db_Connect::OnCurrentTextChangedOfComboxOfInsert(QString table_name__)
 	}
 
 	edit_query_model_ptr_->SetConfig(sql_query,"ShortNameString");  //ShortNameString通用
+	edit_query_model_ptr_->SetConfig(sql_query, QStringLiteral("区间信息"));  //ShortNameString通用
 	edit_query_model_ptr_->setQuery(sql_query);  //sys invoke
 
 	QSqlRecord record = edit_query_model_ptr_->record();
 
-	//edit_query_model_ptr_->setData();
-	for (int i = 0; i < record.count(); ++i)
-	{
-		qDebug() << "record.field(i):" << record.field(i).name();
-		edit_query_model_ptr_->setHeaderData(0, Qt::Vertical, QStringLiteral("区间ID"));
-	}
+	////edit_query_model_ptr_->setData();
+	//for (int i = 0; i < record.count(); ++i)
+	//{
+	//	qDebug() << "record.field(i):" << record.field(i).name();
+	//	edit_query_model_ptr_->setHeaderData(0, Qt::Vertical, QStringLiteral("区间ID"));
+	//}
 
 	//set
 	qobject_cast<Table_Content_And_Operator_Widget*>(COMMON->Get("insert_center_widget_ptr_"))->SetTableModeEntery(edit_query_model_ptr_);
@@ -747,6 +751,7 @@ void Db_Connect::OnSureBtnClicked()
 		break;
 	}
 
+	emit this->ShowStatusBarInfo(QStringLiteral("写入成功"));
 
 }
 

@@ -35,7 +35,7 @@ void Table_View_Content::
 {
 	qDebug()<<"current.data:" << current.data();
 	current_str_ = current.data().toString();
-	//
+	
 	emit this->SignalTableViewClick(current.data().toString());
 
 	//qDebug() <<"new:" << current.row() << current.data() << current.flags();

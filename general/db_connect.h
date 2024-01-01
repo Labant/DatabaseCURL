@@ -60,6 +60,7 @@ protected:
 signals:
     void FileNameFromDialog();
     void ErrorInfo(QString);
+    void ShowStatusBarInfo(QString);
 private:
 
     QSqlDatabase sql_database_;
@@ -67,6 +68,7 @@ private:
     QSqlQueryModel* sql_model_query_of_serach_ptr_ = nullptr;
 
     Edit_Query_Model* edit_query_model_ptr_ = nullptr;
+    QSqlQueryModel sql_model_query_of_Edit_;
 
     QSqlTableModel* sql_table_model = nullptr;
 	QList<QVariant> table_name_ls;

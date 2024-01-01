@@ -5,6 +5,7 @@
 #include "table_view_content_insert.h"
 #include "label_control_addi.h"
 #include "label_control_remove.h"
+#include "status_bar.h"
 //mode
 #include "menu_bar_mode.h"
 #include "db_connect.h"

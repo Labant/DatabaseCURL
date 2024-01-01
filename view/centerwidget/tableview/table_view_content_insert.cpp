@@ -40,7 +40,6 @@ void Table_View_Content_Insert::InitMembers()
 	operator_icon_domain_ptr_ = new Operator_Icon_Domain(this);
 	COMMON->InsertQObjectPtr("operator_icon_domain_ptr_", operator_icon_domain_ptr_);
 	operator_icon_domain_ptr_->setObjectName("operator_icon_domain_ptr_");
-	operator_icon_domain_ptr_->setStyleSheet("#operator_icon_domain_ptr_{background-color:red;}");
 
 }
 
